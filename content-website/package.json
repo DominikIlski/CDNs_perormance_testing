@@ -30,6 +30,7 @@
     "gatsby-source-filesystem": "^5.3.1",
     "gatsby-source-flotiq": "^5.0.0",
     "gatsby-transformer-sharp": "^5.3.1",
+    "lorem-ipsum": "^2.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -56,13 +57,12 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "flotiq-components-react": "git+https://github.com/DominikIlski/flotiq-components-react.git#0b46051",
     "gatsby-cli": "^5.10.0",
     "gatsby-plugin-postcss": "^6.3.0",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.23",
-    "flotiq-components-react": "git+https://github.com/DominikIlski/flotiq-components-react.git#0b46051"
-
+    "tailwindcss": "^3.0.23"
   },
   "repository": {
     "type": "git",
