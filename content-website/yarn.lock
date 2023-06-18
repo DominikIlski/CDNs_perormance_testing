@@ -5328,9 +5328,9 @@ flatted@^3.1.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.7.tgz"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-"flotiq-components-react@git+https://github.com/DominikIlski/flotiq-components-react.git":
+"flotiq-components-react@git+https://github.com/DominikIlski/flotiq-components-react.git#0b46051":
   version "1.1.1"
-  resolved "git+ssh://git@github.com/DominikIlski/flotiq-components-react.git#3058c576f41c18a0e245c16dca71814c37f00254"
+  resolved "git+ssh://git@github.com/DominikIlski/flotiq-components-react.git#0b46051756f86f6b360d23f576daa6e2a843aef3"
 
 follow-redirects@^1.14.0:
   version "1.15.2"

@@ -5,4 +5,25 @@
 
 html {
   scroll-behavior: smooth;
+  padding: 10vw 10vw 0 10vw;
 }
+/* styles.css */
+
+input[type="text"] {
+  padding: 10px;
+  margin: 20px;
+  color: black;
+}
+
+button {
+  color: darkgreen;
+}
+
+h1 {
+  font-size: 5vw !important;
+}
+
+h2 {
+  font-size: 3vw !important;
+}
+

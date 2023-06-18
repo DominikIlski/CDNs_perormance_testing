@@ -19,7 +19,6 @@
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@popperjs/core": "^2.11.0",
-    "flotiq-components-react": "git+https://github.com/DominikIlski/flotiq-components-react.git",
     "gatsby": "^5.3.3",
     "gatsby-plugin-google-gtag": "^5.3.0",
     "gatsby-plugin-image": "^3.3.2",
@@ -61,7 +60,9 @@
     "gatsby-plugin-postcss": "^6.3.0",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.0.23",
+    "flotiq-components-react": "git+https://github.com/DominikIlski/flotiq-components-react.git#0b46051"
+
   },
   "repository": {
     "type": "git",

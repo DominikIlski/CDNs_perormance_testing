@@ -7,17 +7,14 @@ import Logo from '../assets/Logo.svg';
 const Layout = ({ children, additionalClass = [] }) => (
     <main
         className={[
-            'flex', 'flex-col', 'h-screen', 'justify-between', 'items-center', 'text-light-blue', ...additionalClass,
+            'flex', 'flex-col', 'justify-between', 'items-center', ...additionalClass,
         ].join(' ')}
     >
         <Helmet>
-            <html className="bg-dark-blue" lang="en" />
+            <html className="bg-blue-500" lang="en" />
         </Helmet>
-        <div className="m-5">
-            <Link to="/"><img src={Logo} alt="Flotiq" width="300px" className="mx-auto" /></Link>
-        </div>
         {children}
-        <Footer />
+      <Footer/>
     </main>
 );
 
