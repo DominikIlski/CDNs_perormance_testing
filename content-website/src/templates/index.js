@@ -6,7 +6,10 @@ import img2 from '../assets/img2.jpg';
 import img3 from '../assets/img3.jpg';
 import img4 from '../assets/img4.jpg';
 import img5 from '../assets/img5.jpg';
+import img6 from '../assets/img6.jpg';
+
 import LoremIpsumGenerator from "../components/Ipsum";
+import ImageGrid from "../components/ImageGrid";
 
 
 const IndexPage = ({ data, pageContext }) => {
@@ -14,6 +17,9 @@ const IndexPage = ({ data, pageContext }) => {
         <Layout>
           <h1>Web performance testing</h1>
           <h2>Content heavy website</h2>
+          <ImageGrid imageUrls={[
+            img1,img2,img3,img4,img5,img6
+          ]}/>
           <MyForm/>
           <img src={img1} alt={"img1"}/>
           <LoremIpsumGenerator paragraphs={10}/>
@@ -24,7 +30,6 @@ const IndexPage = ({ data, pageContext }) => {
           <img src={img4} alt={"img4"}/>
           <LoremIpsumGenerator paragraphs={10}/>
           <img className="pb-10" src={img5} alt={"img5"}/>
-
         </Layout>
     );
 };
