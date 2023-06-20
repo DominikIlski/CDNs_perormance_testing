@@ -17,7 +17,7 @@ const runLighthouse = async () => {
   let runnerResult;
 
   try {
-    chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
+    chrome = await chromeLauncher.launch({chromeFlags: ['--headless, --disable-gpu']});
     runnerResult = await runLighthouseTest(chrome);
   } catch (error) {
     console.error('Error running Lighthouse test. Retrying...', error);
