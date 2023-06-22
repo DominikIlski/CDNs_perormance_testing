@@ -49,7 +49,7 @@ const uniqueSeriesTimes = new Set(completeData.map((row) => `${row.SERIES}_${row
 
 let skippedRows = 0;
 
-const multiplier = 0.8; // replace with the multiplier to decrease the values each day
+const multiplier = 1.3; // replace with the multiplier to decrease the values each day
 
 // Find minimum and maximum values for each series
 const seriesValues = {};
