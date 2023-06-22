@@ -94,8 +94,8 @@ for (let date = startDate.clone(); date.isSameOrBefore(endDate); date.add(1, 'da
         const avgVal = seriesValues[series].avgVal;
         const valRange = valRanges[series];
         let addedVal = addedVals[series];
-        const randomFactor = avgVal * Math.random() * 0.1;
-        addedVal = Math.max(minVal, addedVal - (valRange * multiplier)* 0.5) + randomFactor;
+        const randomFactor = avgVal * Math.random() * 0.1 * -1;
+        addedVal = Math.max(minVal, addedVal - (valRange * multiplier)) + randomFactor;
         completeData.push({SERIES: series, TIME: time, VALUE: addedVal +''});
         uniqueSeriesTimes.add(seriesTime);
 
