@@ -70,9 +70,8 @@ let valRanges = {};
 let addedVals = {};
 for (const series of combinations) {
   valRanges[series] = seriesValues[series].maxVal - seriesValues[series].minVal;
-  addedVals[series] = seriesValues[series].maxVal * 1.2;
+  addedVals[series] = seriesValues[series].maxVal * 1.5;
 }
-
 
 // For each day in the date range
 for (let date = startDate.clone(); date.isSameOrBefore(endDate); date.add(1, 'days')) {
@@ -96,7 +95,7 @@ for (let date = startDate.clone(); date.isSameOrBefore(endDate); date.add(1, 'da
         const valRange = valRanges[series];
         let addedVal = addedVals[series];
         const randomFactor = avgVal * Math.random() * 0.1;
-        addedVal = Math.max(minVal, addedVal - (valRange * multiplier)) + randomFactor;
+        addedVal = Math.max(minVal, addedVal - (valRange * multiplier)* 0.5) + randomFactor;
         completeData.push({SERIES: series, TIME: time, VALUE: addedVal +''});
         uniqueSeriesTimes.add(seriesTime);
 
