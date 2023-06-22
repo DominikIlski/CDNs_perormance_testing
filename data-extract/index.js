@@ -9,7 +9,7 @@ const downloadDir = "./downloads";
 const paramsToExtract = ["type", "provider", "region", "date", "hour"];
 const transformedFilesFile = "transformed_files.txt";
 const outputDir = "./output";
-
+let fileCounter = 0;
 const roundHour = (hour) => {
   return hour < 11 && hour > 4 ? "06:00" : hour < 15 ? "12:00" : hour < 23 ? "18:00" : "24:00";
 }
@@ -50,6 +50,7 @@ const writeGroupedData = (groups) => {
         {id: 'time', title: 'TIME'},
         {id: 'value', title: 'VALUE'},
       ],
+      fieldDelimiter: ';'
     });
     csvWriter.writeRecords(dataToWrite).then(() => {
       console.log(`File "${parameter}.csv" has been written successfully.`);
@@ -99,9 +100,9 @@ const downloadAndTransformFiles = async () => {
   const s3Objects = (await s3.listObjectsV2(s3Params).promise()).Contents;
 
   for (const s3File of s3Objects) {
-    const filePath = path.join(downloadDir, s3File.Key);
+    console.log('Processing file:   ' + s3File.Key +
+      '   File count: ' + fileCounter + ' / ' + s3Objects.length);
     if (!transformedFiles.has(s3File.Key)) {
-
       const s3Params = { Bucket: bucketName, Key: s3File.Key};
       const s3Data = await s3.getObject(s3Params).promise();
       const transformedData = await transformFile(s3File.Key, s3Data.Body.toString());
@@ -109,6 +110,7 @@ const downloadAndTransformFiles = async () => {
       fs.appendFileSync(transformedFilesFile, `${s3File.Key}\n`);
       data.push(transformedData);
     }
+    fileCounter++;
   }
   if(!data.length) {
     throw Error('All data has been processed');
