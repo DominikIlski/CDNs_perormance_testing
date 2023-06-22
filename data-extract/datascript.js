@@ -49,7 +49,7 @@ const uniqueSeriesTimes = new Set(completeData.map((row) => `${row.SERIES}_${row
 
 let skippedRows = 0;
 
-const multiplier = 0.9; // replace with the multiplier to decrease the values each day
+const multiplier = 0.8; // replace with the multiplier to decrease the values each day
 
 // Find minimum and maximum values for each series
 const seriesValues = {};
@@ -70,7 +70,7 @@ let valRanges = {};
 let addedVals = {};
 for (const series of combinations) {
   valRanges[series] = seriesValues[series].maxVal - seriesValues[series].minVal;
-  addedVals[series] = seriesValues[series].maxVal * 1.5;
+  addedVals[series] = seriesValues[series].maxVal * 1.1;
 }
 
 // For each day in the date range
