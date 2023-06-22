@@ -70,7 +70,7 @@ let valRanges = {};
 let addedVals = {};
 for (const series of combinations) {
   valRanges[series] = seriesValues[series].maxVal - seriesValues[series].minVal;
-  addedVals[series] = seriesValues[series].maxVal * 1.3;
+  addedVals[series] = seriesValues[series].maxVal;
 }
 
 // For each day in the date range
@@ -121,7 +121,7 @@ console.log('total data:', completeData.length);
 console.log('skipped rows:', skippedRows);
 
 // Converting data to CSV
-completeData = completeData.map((row, i) => {
+completeData = completeData.map((row) => {
   const newRow = {...row};
   newRow.VALUE = row.VALUE.replace('.', ',');
   newRow.TIME = row.TIME.replace('24:00', '00:00');
