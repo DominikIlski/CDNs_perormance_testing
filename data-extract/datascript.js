@@ -3,7 +3,7 @@ const moment = require('moment');
 
 // Set the range of the dates
 const startDate = moment("15-06-2023", "DD-MM-YYYY");
-const endDate = moment("21-06-2023", "DD-MM-YYYY");
+const endDate = moment("23-06-2023", "DD-MM-YYYY");
 
 // Set the hours
 const hours = ["06", "12", "18", "24"];
@@ -122,7 +122,14 @@ console.log('total data:', completeData.length);
 console.log('skipped rows:', skippedRows);
 
 // Converting data to CSV
-const csvData = completeData.map(row => Object.values(row).join(','));
+completeData = completeData.map(row => {
+  const newRow = {...row};
+  newRow.VALUE = row.VALUE.replace('.', ',');
+  newRow.TIME = row.TIME.replace('T', ' ').replace('24:00', '00:00');
+  return newRow;
+});
+
+const csvData = completeData.map(row => Object.values(row).join(';'));
 const csvContent = headers.join(',') + '\n' + csvData.join('\n');
 
 fs.writeFileSync(`output-complete/${fileName}`, csvContent, 'utf-8');
