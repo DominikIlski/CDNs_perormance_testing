@@ -2,7 +2,7 @@ const fs = require('fs');
 const moment = require('moment');
 
 // Set the range of the dates
-const startDate = moment("15-06-2023", "DD-MM-YYYY");
+const startDate = moment("16-06-2023", "DD-MM-YYYY");
 const endDate = moment("23-06-2023", "DD-MM-YYYY");
 
 // Set the hours
@@ -70,7 +70,7 @@ let valRanges = {};
 let addedVals = {};
 for (const series of combinations) {
   valRanges[series] = seriesValues[series].maxVal - seriesValues[series].minVal;
-  addedVals[series] = seriesValues[series].maxVal * 1.5;
+  addedVals[series] = seriesValues[series].maxVal * 1.2;
 }
 
 
@@ -95,9 +95,9 @@ for (let date = startDate.clone(); date.isSameOrBefore(endDate); date.add(1, 'da
         const avgVal = seriesValues[series].avgVal;
         const valRange = valRanges[series];
         let addedVal = addedVals[series];
-        const randomFactor = Math.random() - 0.5;
-        addedVal = Math.max(minVal, addedVal - (valRange * multiplier) + (valRange * randomFactor));
-        completeData.push({SERIES: series, TIME: time, VALUE: addedVal});
+        const randomFactor = avgVal * Math.random() * 0.1;
+        addedVal = Math.max(minVal, addedVal - (valRange * multiplier)) + randomFactor;
+        completeData.push({SERIES: series, TIME: time, VALUE: addedVal +''});
         uniqueSeriesTimes.add(seriesTime);
 
         addedVals[series] = addedVal;
@@ -122,14 +122,14 @@ console.log('total data:', completeData.length);
 console.log('skipped rows:', skippedRows);
 
 // Converting data to CSV
-completeData = completeData.map(row => {
+completeData = completeData.map((row, i) => {
   const newRow = {...row};
   newRow.VALUE = row.VALUE.replace('.', ',');
-  newRow.TIME = row.TIME.replace('T', ' ').replace('24:00', '00:00');
+  newRow.TIME = row.TIME.replace('24:00', '00:00');
   return newRow;
 });
 
 const csvData = completeData.map(row => Object.values(row).join(';'));
-const csvContent = headers.join(',') + '\n' + csvData.join('\n');
+const csvContent = headers.join(';') + '\n' + csvData.join('\n');
 
 fs.writeFileSync(`output-complete/${fileName}`, csvContent, 'utf-8');
