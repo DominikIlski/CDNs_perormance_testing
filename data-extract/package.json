@@ -1,0 +1,14 @@
+{
+  "name": "data-extract",
+  "version": "1.0.0",
+  "description": "Script used for the extraction of the data collected by docker-testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1402.0"
+  }
+}
