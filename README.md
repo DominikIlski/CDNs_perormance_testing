@@ -1,6 +1,6 @@
 # Performance Analysis of Cloudflare Pages and Vercel
 
-This repository contains the code used for the research and analysis presented in the thesis, "Performance Analysis of Cloudflare Pages and Vercel." The study focused on assessing the user experience and performance metrics of these two popular website hosting platforms, examining key indicators such as Cumulative Layout Shift (CLS), Speed Index, and Time to First Byte (TTFB) across different regions: Asia, Europe, and the United States.
+This repository contains the code used for the research and analysis presented in the thesis, ["Performance Analysis of Cloudflare Pages and Vercel."](https://github.com/DominikIlski/Masters_Thesis_Paper) The study focused on assessing the user experience and performance metrics of these two popular website hosting platforms, examining key indicators such as Cumulative Layout Shift (CLS), Speed Index, and Time to First Byte (TTFB) across different regions: Asia, Europe, and the United States.
 
 ## Table of Contents
 
